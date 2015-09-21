@@ -4,11 +4,28 @@
 	<p>Already a member? <a href='login.php'>Login</a></p>
 	<hr>
 
-	<input id="firstName" type="text" name="firstName">
-	<input id="lastName" type="text" name="lastName">
-	<input id="regNo" type="text" name="regNo">
-	<input id="domain" type="text" name="domain">
-	<input id="username" type="email" name="email">
-	<input id="password" type="password" name="password">
-
+	<div>
+		<input id="firstName" type="text" name="firstName">
+	</div>
+	<br/>
+	<div>
+		<input id="lastName" type="text" name="lastName">
+	</div>
+	<br/>
+	<div>
+		<input id="regNo" type="text" name="regNo">
+	</div>
+	<br/>
+	<div>
+		<input id="domain" type="text" name="domain">
+	</div>
+	<br/>
+	<div>
+		<input id="username" type="email" name="email">
+	</div>
+	<br/>
+	<div>
+		<input id="password" type="password" name="password">
+	</div>
+	<br/>
 </form>
