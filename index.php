@@ -1,3 +1,8 @@
+<?php
+require('classes/db.php');
+$db=new database();
+$db->connect();
+?>
 <form role="form" method="post" action="" autocomplete="off">
 
 	<h2>Please Sign Up</h2>
