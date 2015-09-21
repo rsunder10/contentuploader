@@ -5,27 +5,27 @@
 	<hr>
 
 	<div>
-		<input id="firstName" type="text" name="firstName">
+		<input id="firstName" type="text" name="firstName" placeholder="firstname">
 	</div>
 	<br/>
 	<div>
-		<input id="lastName" type="text" name="lastName">
+		<input id="lastName" type="text" name="lastName" placeholder="lastname">
 	</div>
 	<br/>
 	<div>
-		<input id="regNo" type="text" name="regNo">
+		<input id="regNo" type="text" name="regNo" placeholder="Register Number">
 	</div>
 	<br/>
 	<div>
-		<input id="domain" type="text" name="domain">
+		<input id="domain" type="text" name="domain" placeholder="Domain">
 	</div>
 	<br/>
 	<div>
-		<input id="username" type="email" name="email">
+		<input id="username" type="email" name="email" placeholder="username">
 	</div>
 	<br/>
 	<div>
-		<input id="password" type="password" name="password">
+		<input id="password" type="password" name="password" placeholder="password">
 	</div>
 	<br/>
 </form>
