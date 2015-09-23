@@ -61,7 +61,8 @@ if(isset($_SESSION['user'])&&isset($_SESSION['id'])){
 
 </form>
 
-<script src="js/front_ver.js"></script>
+<script src="js/front_ver.js"  type="text/javascript"></script>
+
 
 <?php 
 	require('layout/footer.php')

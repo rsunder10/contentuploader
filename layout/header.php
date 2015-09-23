@@ -4,6 +4,6 @@
     <meta charset="utf-8">
     <title><?php if(isset($title)){ echo $title; }?></title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-    <script type="text/javascript" src="jquery-1.2.6.min.js"></script>
 </head>
 <body>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>

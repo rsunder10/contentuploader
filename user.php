@@ -11,3 +11,4 @@ if(isset($_SESSION['user'])&&isset($_SESSION['id'])){
 <form method="post" action="logout.php">
 	<input type="submit" value="Logout" >
 </form>
+
