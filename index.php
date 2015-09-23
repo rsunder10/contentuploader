@@ -10,6 +10,7 @@ if(isset($_SESSION['user'])&&isset($_SESSION['id'])){
 <?php 
 	require('layout/header.php')
 ?>
+
 <form role="form" method="post" action="php_func/back_validation.php" autocomplete="off">
 
 	<h2>Please Sign Up</h2>
@@ -18,6 +19,7 @@ if(isset($_SESSION['user'])&&isset($_SESSION['id'])){
 
 	<div>
 		<input id="username" type="text" name="user" placeholder="username">
+		<div id="status"></div>
 	</div>
 	<br/>
 
@@ -58,6 +60,8 @@ if(isset($_SESSION['user'])&&isset($_SESSION['id'])){
 <input type="submit" value="SignUp" id ="submit">
 
 </form>
+
+<script src="js/front_ver.js"></script>
 
 <?php 
 	require('layout/footer.php')
