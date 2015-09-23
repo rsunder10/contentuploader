@@ -22,11 +22,15 @@ function connect()
 
 		}
 //inseting the query
-		function insertData($insertQuery)
+		function insertquery($insertQuery)
 		{	
-			return mysqli_query($this->connection,$insertQuery) or die("error");
+			return mysqli_query($this->connection,$insertQuery) or die("errors");
 		}
 
+		function selectdata($selectQuery)
+		{
+			return mysqli_query($this->connection,$selectQuery);
+		}
 	}
 
 ?>
