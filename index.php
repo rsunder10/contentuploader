@@ -1,13 +1,13 @@
 <?php
 require('classes/db.php');
-$db=new database();
+$db=new Database();
 $db->connect();
 ?>
 
 <?php 
 	require('layout/header.php')
 ?>
-<form role="form" method="get" action="#" autocomplete="off">
+<form role="form" method="post" action="php_func/back_validation.php" autocomplete="off">
 
 	<h2>Please Sign Up</h2>
 	<p>Already a member? <a href='login.php'>Login</a></p>
@@ -23,24 +23,24 @@ $db->connect();
 	</div>
 	<br/>
 	<div>
-		<input id="password1" type="password" name="password1" placeholder="password">
+		<input id="password1" type="password" name="pass1" placeholder="password">
 	</div>
 	<br/>
 	<div>
-		<input id="password2" type="password" name="password2" placeholder="confirm password">
+		<input id="password2" type="password" name="pass2" placeholder="confirm password">
 	</div>
 	<br/>
 	
 	<div>
-		<input id="firstName" type="text" name="firstName" placeholder="firstname">
+		<input id="firstName" type="text" name="first" placeholder="firstname">
 	</div>
 	<br/>
 	<div>
-		<input id="lastName" type="text" name="lastName" placeholder="lastname">
+		<input id="lastName" type="text" name="last" placeholder="lastname">
 	</div>
 	<br/>
 	<div>
-		<input id="regNo" type="text" name="regNo" placeholder="Register Number">
+		<input id="regNo" type="text" name="regno" placeholder="Register Number">
 	</div>
 	<br/>
 	<div>

@@ -1,6 +1,13 @@
 <?php
 class Validate{
 
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
 function valid_email($email)
 {
     if (!ereg("^[^@]{1,64}@[^@]{1,255}$", $email))
