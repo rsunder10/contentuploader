@@ -95,7 +95,7 @@ function valid_username_name($name,$minlength = 7, $maxlength = 100)
 	return true;
 }
 
-function valid_register($registerno, $minlength = 8, $maxlength = 25)
+function valid_register($registerno, $minlength =8, $maxlength = 25)
 {
  
     $registerno = trim($registerno);
