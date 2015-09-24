@@ -26,6 +26,17 @@ require('layout/header.php');
 	<input id="password1" type="password" name="pass1" placeholder="password">
 </div>
 <br/>
+<div id="warning">
+<?php
+ if(isset($_SESSION['warning']))
+ 	{	
+ 		echo "Please Enter the Right Credentials"." ( ".$_SESSION['warning']." )";
+ 		$_SESSION['warning']==null;
+ 		session_destroy();
+
+ 	}
+?>
+<div>
 
 
 <input type="submit" value="SignIn" id ="submit">

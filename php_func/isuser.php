@@ -26,13 +26,17 @@ if(isset($_POST['user'])&&isset($_POST['pass1'])){
 			header('Location:../user.php');
 		}
 		else{
-			die('Error');
-		}
+			
+			$_SESSION['warning']='no such user';
+			
+			header('Location:../login.php');
+			}
 
 	}
 	else
 	{
-		die('Error');
+		$_SESSION['warning']='cant leave empty';
+		header('Location:../login.php');
 	}
 }
 else
