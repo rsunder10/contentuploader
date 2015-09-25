@@ -1,5 +1,5 @@
 <?php
-require('classes/db.php');
+require('../classes/db.php');
 // remove all session variables
 session_unset();
 session_destroy();

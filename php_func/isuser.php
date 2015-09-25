@@ -23,20 +23,20 @@ if(isset($_POST['user'])&&isset($_POST['pass1'])){
 
 			$_SESSION['user']=$user;
 			$_SESSION['id']=$row['id'];
-			header('Location:../user.php');
+			header('Location:../profile/user.php');
 		}
 		else{
 			
 			$_SESSION['warning']='no such user';
 			
-			header('Location:../login.php');
+			header('Location:../register/login.php');
 			}
 
 	}
 	else
 	{
 		$_SESSION['warning']='cant leave empty';
-		header('Location:../login.php');
+		header('Location:../register/login.php');
 	}
 }
 else

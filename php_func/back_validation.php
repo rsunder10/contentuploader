@@ -46,7 +46,7 @@ if(isset($_POST['regno'])&&isset($_POST['first'])&&isset($_POST['last'])&&isset(
 		$query=sprintf("INSERT INTO `contentuploader`.`signup` (`user`,`password`, `fname`, `lname`, `regno`, `contact`, `email`, `domain`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');",$user,$pass1,$first,$last,$regno,$contact,$email,$domain);
 				if($result=$db->insertquery($query)){
 						$_SESSION['signup']='signup';
-						header('Location:../login.php');    
+						header('Location:../register/login.php');    
 
 					
 				}

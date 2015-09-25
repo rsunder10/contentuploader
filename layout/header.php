@@ -6,4 +6,4 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>

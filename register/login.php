@@ -1,20 +1,20 @@
 <?php 
-require('classes/db.php');
-require('layout/header.php');
+require('../classes/db.php');
+require('../layout/header.php');
 	if(isset($_SESSION['signup'])){
 		echo "User Created";
 		$_SESSION['signup']=null;
 	}
 	if(isset($_SESSION['user'])&&isset($_SESSION['id'])){
-	header('Location:user.php');
+	header('Location:../profile/user.php');
 }
 
 ?>
 
-<form role="form" method="post" action="php_func/isuser.php" autocomplete="off">
+<form role="form" method="post" action="../php_func/isuser.php" autocomplete="off">
 
 <h2>Please Sign In</h2>
-	<p>If Not a member? <a href='index.php'>SignUp</a> Here</p>
+	<p>If Not a member? <a href='../index.php'>SignUp</a> Here</p>
 	<hr>
 
 <div>
@@ -50,5 +50,5 @@ require('layout/header.php');
 
 
 <?php 
-	require('layout/footer.php')
+	require('../layout/footer.php')
 ?>
