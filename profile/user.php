@@ -6,9 +6,9 @@ require('../includes/include_user.php');
 </form>
 <h1>Welcome, <?php echo $_SESSION['user'] ?></h1>
 <hr/>
-<img src="#" width="200" height="200"/>
-
-
+<?php if($_SESSION['proimg']==NULL){?>
+<img src="../img/unknown.jpg" width="200" height="200"/>
+<?php } ?>
 
 <?php require('../includes/navlinks.php'); ?>
 

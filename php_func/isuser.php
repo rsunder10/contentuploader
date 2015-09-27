@@ -23,6 +23,7 @@ if(isset($_POST['user'])&&isset($_POST['pass1'])){
 
 			$_SESSION['user']=$user;
 			$_SESSION['id']=$row['id'];
+			$_SESSION['proimg']=$row['imgname'];
 			header('Location:../profile/user.php');
 		}
 		else{
