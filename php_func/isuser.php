@@ -11,7 +11,7 @@ if(isset($_POST['user'])&&isset($_POST['pass1'])){
 	if(!empty($user)&&!empty($pass)){
 
 		 $query = sprintf("
-		SELECT id 
+		SELECT * 
 		FROM signup 
 		WHERE user = '%s' AND password = '%s'
 		 LIMIT 1;", mysql_real_escape_string($user), mysql_real_escape_string(md5($pass)));
