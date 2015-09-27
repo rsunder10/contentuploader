@@ -25,11 +25,11 @@ else
 }
 
 $(document).ready(function(e){
-    var first=false;
-    var last=false;
-    var domain=false;
-    var contact=false;
-    var regno=false;
+    var first=true;
+    var last=true;
+    var domain=true;
+    var contact=true;
+    var regno=true;
 $('#changepass').hide();
 $('#show').click(function(e){
   $('#changepass').toggle();

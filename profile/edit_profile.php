@@ -1,6 +1,7 @@
 <?php
 require('../layout/header.php');
 require('../includes/include_user.php');
+require('../db_man/profile_edit.php');
 ?>
 <h1>Customize Your Profile</h1>
 <?php require('../includes/navlinks.php'); ?>
@@ -36,30 +37,30 @@ require('../includes/include_user.php');
 </form>
 
 <hr/>
-<form role="form" method="post" action="php_func/update_valid.php" autocomplete="off" id="form">
+<form role="form" method="post" action="../php_func/update_valid.php" autocomplete="off" id="form">
 	
 	<div>
-		<input id="first" type="text" name="first" placeholder="firstname" required >
+		<input id="first" type="text" name="first" placeholder="firstname" value=<?php echo "$fname"?> required >
 		<div id="first_status"></div>
 	</div>
 	<br/>
 	<div>
-		<input id="last" type="text" name="last" placeholder="lastname" required>
+		<input id="last" type="text" name="last" placeholder="lastname" value=<?php echo "$lname"?> required>
 		<div id="last_status"></div>
 	</div>
 	<br/>
 	<div>
-		<input id="regno" type="text" name="regno" placeholder="Register Number" required >
+		<input id="regno" type="text" name="regno" placeholder="Register Number" value=<?php echo "$regno"?> required >
 		<div id="regno_status"></div>
 	</div>
 	<br/>
 	<div>
-		<input id="contact" type="tel" name="contact" placeholder="contact" required>
+		<input id="contact" type="tel" name="contact" placeholder="contact" value=<?php echo "$contact"?> required>
 		<div id="contact_status"></div>
 	</div>
 	<br/>
 	<div>
-		<input id="domain" type="text" name="domain" placeholder="Domain" required>
+		<input id="domain" type="text" name="domain" placeholder="Domain" value=<?php echo "$domain"?> required>
 		<div id="domain_status"></div>
 	</div>
 	<br/>
