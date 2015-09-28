@@ -14,8 +14,11 @@ require('../db_man/profile_edit.php');
 <input type="submit" value="Submit"  />
 </form>
 <hr/>
+<?php
+	require('../includes/passcheckedit.php');
+ ?>
 <a id="show" style="cursor:pointer;">Change Password</a>
-<form role="form" method="post" action="php_func/update_valid.php" autocomplete="off" id="changepass">
+<form role="form" method="post" action="../db_man/changepass.php" autocomplete="off" id="changepass">
 
 	<div>
 		<input id="prev" type="password" name="prev" placeholder="Previous Password">
