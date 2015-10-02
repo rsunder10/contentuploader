@@ -1,5 +1,4 @@
 <?php
-require('../layout/header.php');
 require('../includes/include_user.php');
 require('../db_man/profile_edit.php');
 ?>
@@ -21,18 +20,18 @@ require('../db_man/profile_edit.php');
 <form role="form" method="post" action="../db_man/changepass.php" autocomplete="off" id="changepass">
 
 	<div>
-		<input id="prev" type="password" name="prev" placeholder="Previous Password">
+		<input id="prev" type="password" name="prev" placeholder="Previous Password" required>
 		<div id="prev_status"></div>
 	</div>
 	</br>
 
 	<div>
-		<input id="pass1" type="password" name="pass1" placeholder="password">
+		<input id="pass1" type="password" name="pass1" placeholder="password" required>
 		<div id="pass1_status"></div>
 	</div>
 	<br/>
 	<div>
-		<input id="pass2" type="password" name="pass2" placeholder="confirm password">
+		<input id="pass2" type="password" name="pass2" placeholder="confirm password" required>
 		<div id="pass2_status"></div>
 	</div>
 	<br/>

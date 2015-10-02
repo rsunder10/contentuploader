@@ -24,7 +24,7 @@ function connect()
 //inseting the query
 		function insertquery($insertQuery)
 		{	
-			return mysqli_query($this->connection,$insertQuery) or die("errors");
+			return mysqli_query($this->connection,$insertQuery) or die('Error Occurred');
 		}
 
 		function selectdata($selectQuery)

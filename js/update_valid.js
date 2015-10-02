@@ -1,3 +1,14 @@
+
+function pass2valid(a,b){
+if(a=="")
+  return false;
+if(a.length>=8)
+  if(a===b)
+    return true;
+else 
+  return false;
+
+}
 function validatePhone(a) {
     var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
     if (filter.test(a)) {
@@ -23,13 +34,17 @@ else
     return true;
 
 }
-
+  
 $(document).ready(function(e){
     var first=true;
     var last=true;
     var domain=true;
     var contact=true;
     var regno=true;
+    var pass1=false;
+    var pass2=false;
+    var prev=false;
+
 $('#changepass').hide();
 $('#show').click(function(e){
   $('#changepass').toggle();
@@ -143,6 +158,74 @@ $('#domain').blur(function(e) {
     });
 
 
+$('#prev').blur(function(e) {
+
+    
+       if(fl_valid($(this).val())) {
+
+           $('#prev_status').html('Valid');
+
+           $('#prev').css('border-color', 'green');
+           prev=true;
+       }
+
+       else {
+        if($(this).val()=="")
+            $('#prev_status').html('Cant Leave Empty');        
+          $('#prev').css('border-color', 'red');
+          prev=false;
+       }
+
+    });
+
+
+$('#pass1').blur(function(e) {
+
+  
+     if(regno_valid($(this).val())) {
+
+         $('#pass1_status').html('Valid');
+
+         $('#pass1').css('border-color', 'green');
+         pass1=true;
+     }
+
+     else {
+      if($(this).val()=="")
+          $('#pass1_status').html('Cant Leave Empty');
+    else if($(this).val().length<8)
+           $('#pass1_status').html('Minimum Length Should be 8');
+       
+        $('#pass1').css('border-color', 'red');
+        pass1=false;
+     }
+
+  });
+$('#pass2').blur(function(e) {
+
+  
+     if(pass2valid($(this).val(),$('#pass1').val())) {
+
+         $('#pass2_status').html('Valid');
+
+         $('#pass2').css('border-color', 'green');
+         pass2=true;
+     }
+
+     else {
+      if($(this).val()=="")
+          $('#pass2_status').html('Cant Leave Empty');
+    else if($(this).val().length<8)
+           $('#pass2_status').html('Minimum Length Should be 8');
+      else if($(this).val()!=$('#pass1').val())
+        $('#pass2_status').html('Password Didnt Match');
+       
+        $('#pass2').css('border-color', 'red');
+        pass2=false;
+     }
+
+  });
+
 
     $('#form').submit(function(event) {
         if(first==true && last==true  && contact==true  && domain==true && regno==true){
@@ -151,6 +234,9 @@ $('#domain').blur(function(e) {
     $('#mainerror').html('Full The Form Completely Without Any Error'); 
             event.preventDefault()
     });
+
+    
+
 
 
 });
