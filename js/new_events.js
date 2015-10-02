@@ -1,3 +1,4 @@
+var i=2;
 $(document).ready(function(){
 
 
@@ -9,7 +10,11 @@ $(document).ready(function(){
             case 'event_introduction': window.location.href = "../event/event_introduction.php"; break;
             case 'event_cordinators': window.location.href = "../event/event_cordinators.php"; break;
             case 'abort': window.location.href = "../profile/newevent.php"; break;
-
+            case 'add_cordinator':
+                    var html='<br/><label>Cordinator '+i+'</label><input type="text" id="enter_cordinator" name="ecord[]" required/> <br/>'
+                    i++;
+                    $('#cordin').append(html);
+                break;
         }
     });
 })

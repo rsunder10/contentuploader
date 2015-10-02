@@ -1,11 +1,13 @@
 <?php
 require('../includes/include_newevent.php');
+require('../php_func/event/name_isset.php');
 ?>
 
 <input type="button" id="abort" value="Cancel">
 <form id="intro" action="event_rules.php" method="post">
 <hr/>
-<textarea id="enter_introduction" placeholder="Write About Your Events"></textarea>
+<textarea id="enter_introduction" name="eintroduction" placeholder="Write About Your Events"
+ required><?php if(isset($_SESSION['eintroduction'])) echo $_SESSION['eintroduction'];?></textarea>
 </br>
 <hr/>
 <input type="button" id="event_name" value="Prev Step">

@@ -8,7 +8,6 @@ require('../includes/include_newevent.php');
 	------------------
 	---------------
 	-------------
-
 </div>
 <div id="prev_event_user">
 	<h3>Event Created By <?php echo " ".$_SESSION['user']; ?></h3>
