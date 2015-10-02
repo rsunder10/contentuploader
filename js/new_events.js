@@ -6,6 +6,8 @@ $(document).ready(function(){
             case 'event_rules': window.location.href = "../event/event_rules.php"; break;
             case 'event_introduction': window.location.href = "../event/event_introduction.php"; break;
             case 'event_cordinators': window.location.href = "../event/event_cordinators.php"; break;
+            case 'abort': window.location.href = "../profile/newevent.php"; break;
+
         }
     });
 })

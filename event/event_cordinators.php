@@ -1,10 +1,12 @@
 <?php
 require('../includes/include_newevent.php');
 ?>
+<input type="button" id="abort" value="Cancel">
+<hr/>
 
-
-
-
+<input type="text" id="enter_cordinator"/>
+<input type="button" id="add_cordinator" value="+Add"/>
+<hr/>
 
 
 

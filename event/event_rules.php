@@ -1,10 +1,14 @@
 <?php
 require('../includes/include_newevent.php');
 ?>
+<input type="button" id="abort" value="Cancel">
+<hr/>
+<label>Enter the Rules For Round < ></label>
+<br/>
+<textarea placeholder="Enter the Rule For Round< >"></textarea>
+</br>
 
-
-
-
+<hr/>
 
 
 

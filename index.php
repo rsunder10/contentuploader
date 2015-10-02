@@ -3,7 +3,7 @@ require('classes/db.php');
 $db=new Database();
 $db->connect();
 if(isset($_SESSION['user'])&&isset($_SESSION['id'])){
-	header('Location:user.php');
+	header('Location:profile/user.php');
 }
 ?>
 

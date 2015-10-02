@@ -2,11 +2,12 @@
 require('../includes/include_newevent.php');
 ?>
 
+<input type="button" id="abort" value="Cancel">
+<hr/>
 
-
-
-
-
+<textarea id="enter_introduction" placeholder="Write About Your Events"></textarea>
+</br>
+<hr/>
 
 
 
