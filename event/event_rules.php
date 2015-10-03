@@ -1,4 +1,4 @@
-<?php
+ <?php
 require('../includes/include_newevent.php');
 require('../php_func/event/introduction_isset.php');
 ?>
