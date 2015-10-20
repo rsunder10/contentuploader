@@ -30,6 +30,7 @@ function connect()
 		function selectdata($selectQuery)
 		{
 			return mysqli_query($this->connection,$selectQuery);
+
 		}
 	}
 
