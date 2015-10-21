@@ -2,7 +2,7 @@
 require('../includes/include_newevent.php');
 require('../php_func/event/introduction_isset.php');
 ?>
-<input type="button" id="abort" value="Cancel">
+<input type="button" id="<?php if(isset($_SESSION['event_id'])) echo "abort2"; else echo "abort"; ?>" value="Cancel">
 <hr/>
 <form id="enter_rules" action="event_cordinators.php" method="post">
 <?php  

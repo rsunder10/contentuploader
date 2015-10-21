@@ -1,7 +1,7 @@
 <?php
 require('../includes/include_newevent.php');
 ?>
-<input type="button" id="abort" value="Cancel">
+<input type="button" id="<?php if(isset($_SESSION['event_id'])) echo "abort2"; else echo "abort"; ?>" value="Cancel">
 <hr/>
 <form id="name_rounds" action="event_introduction.php" method="POST">
 <label>Event Name:</label>

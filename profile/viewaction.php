@@ -39,5 +39,22 @@ require('../includes/include_user.php');
  		}
  ?>
 
-
  </p>
+
+ <h3>Cordinators</h3>
+<?php
+for($j=0;$j<count($cordinator_array);$j++){	
+?>
+
+<p>
+<?php echo $j+1; echo " "; echo $cordinator_array[$j];	?>
+</p>
+
+<?php
+	}
+?>
+
+
+<?php
+	require('../layout/footer.php');
+?>

@@ -9,13 +9,16 @@ require('../includes/include_newevent.php');
 	---------------
 	-------------
 </div>
-<div id="prev_event_user">
-	<h3>Event Created By <?php echo " ".$_SESSION['user']; ?></h3>
-</div>
 
 <input type="button" id="create_event" value="Add Event">
 
 <script src="../js/new_events.js"></script>
 <?php
+$_SESSION['event_id']=NULL;
+$_SESSION['ecord']=NULL;
+$_SESSION['erules']=NULL;
+$_SESSION['erounds']=NULL;
+$_SESSION['ename']=NULL;
+$_SESSION['eintroduction']=NULL;
 	require('../layout/footer.php');
 ?>

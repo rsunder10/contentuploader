@@ -15,8 +15,18 @@ for($i=0;$i<$round;$i++){
 		for($j=0;$j<count($rules);$j++){
 
 			$rules_per_round[$i][$j]=$rules_in[$j];
+
 		}
 }
 
+$cordinator_array=explode($cordinator_join,$cordinator);
+$_SESSION['ename']=$row['name'];
+$_SESSION['erounds']=$row['rounds'];
+$_SESSION['event_id']=$row['event_id'];
+$_SESSION['eintroduction']=$row['introduction'];
+for($i=0;$i<$round;$i++){
+$_SESSION['erules'][$i]=implode('\n',$rules_per_round[$i]);	
+}
+$_SESSION[]
 
 ?>

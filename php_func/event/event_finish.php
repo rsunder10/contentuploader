@@ -59,4 +59,10 @@ else{
 
 	die('Some Problem with the Session to create a Events');
 }
+
+$_SESSION['ecord']=NULL;
+$_SESSION['erules']=NULL;
+$_SESSION['erounds']=NULL;
+$_SESSION['ename']=NULL;
+$_SESSION['eintroduction']=NULL;
 ?>
