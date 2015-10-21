@@ -27,6 +27,8 @@ $_SESSION['eintroduction']=$row['introduction'];
 for($i=0;$i<$round;$i++){
 $_SESSION['erules'][$i]=implode('\n',$rules_per_round[$i]);	
 }
-$_SESSION[]
+for($i=0;$i<count($cordinator_array);$i++){
+	$_SESSION['ecord'][$i]=$cordinator_array[$i];
+}
 
 ?>
