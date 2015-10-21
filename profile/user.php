@@ -15,26 +15,52 @@ require('../includes/include_user.php');
 <br/>
 <hr/>
 <div>
+<?php require('../includes/navlinks.php'); ?>
+</div>
+<div>
 	<h3>Recently Created Events By You</h3>
-		<?php
+<table style="width:100%">
+  <tr>
+    <th>Title</td>
+    <th>CreatedAt</th>
+    <th>UpdatedAt</th>
+    <th>View</th>		
+    <th>Edit</th>
+
+  </tr>
+  <?php
 			require('profunc/recently_added_event.php');
+			require('profunc/timeconvert.php');
 			if($len>=1){
 			while($row=mysqli_fetch_assoc($result)){
-		?>
-		<div>
-			<a href="viewaction.php?<?php echo "eventid=".$row['event_id']  ?> "><?php echo $row['name'] ;?></a>
-		</div>
-		<?php
+	?>
+
+  <tr>
+    <td><?php echo $row['name'] ;?></td>
+    <td><?php echo get_time_difference_php($row['create_time']) ; ?></td>
+    <td><?php echo get_time_difference_php($row['update_time']) ; ?></td>
+    <td><a href="viewaction.php?<?php echo "eventid=".$row['event_id']  ?> ">View</a></td>		
+    <td><a href="editaction.php?<?php echo "eventid=".$row['event_id']  ?> ">Edit</a></td>
+  </tr>
+  	<?php
 				}
 		
 			}
 	
 	?>
-	<a href="#">view all</a>
+
+
+
+</table>
+
+		
+
+<a href="#">view all</a>
+
 </div>
 <hr/>
 <hr/>
-<?php require('../includes/navlinks.php'); ?>
+
 
 
 <?php
