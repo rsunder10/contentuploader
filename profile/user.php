@@ -6,10 +6,10 @@ require('../includes/include_user.php');
 </form>
 <h1>Welcome, <?php echo $_SESSION['user'] ?></h1>
 <hr/>
-<?php if($_SESSION['proimg']=='NULL'){?>
+<?php if($_SESSION['proimg']==NULL){?>
 <img src="../img/unknown.jpg" width="200" height="200"/>
 <?php } ?>
-<?php if($_SESSION['proimg']!='NULL'){?>
+<?php if($_SESSION['proimg']!=NULL){?>
 <img src=<?php echo "../profile/proimg/".$_SESSION['proimg'] ?> width="200" height="200"/>
 <?php } ?>
 <br/>

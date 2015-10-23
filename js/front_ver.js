@@ -1,3 +1,4 @@
+
 pic1 = new Image(16, 16); 
 pic1.src = "./img/loader.gif";
 var user=false;

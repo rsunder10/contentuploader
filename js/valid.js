@@ -1,3 +1,4 @@
+
 function validatePhone(a) {
     var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
     if (filter.test(a)) {
@@ -35,8 +36,6 @@ else
 
 }
 
-$(document).ready(function(e){
-	var email=false;
 	var pass1=false;
 	var pass2=false;
 	var first=false;
@@ -44,7 +43,12 @@ $(document).ready(function(e){
 	var domain=false;
 	var contact=false;
 	var regno=false;
-$('#user')
+
+$(document).ready(function(e){
+
+
+
+
 
 $('#contact').blur(function(e) {
 
@@ -201,8 +205,9 @@ $('#pass2').blur(function(e) {
 
 	});
 
+
 	$('#form').submit(function(event) {
-        if(	user==true && first==true && last==true && email==true && pass1==true && pass2==true && contact==true  && domain==true && regno==true ){
+        if(	user==true && first==true && last==true  && pass1==true && pass2==true && contact==true  && domain==true && regno==true ){
 		return;
 		}
 	$('#mainerror').html('Full The Form Completely Without Any Error');	
