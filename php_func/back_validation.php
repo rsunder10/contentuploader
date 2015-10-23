@@ -27,7 +27,7 @@ if(isset($_POST['regno'])&&isset($_POST['first'])&&isset($_POST['last'])&&isset(
 		SELECT id 
 		FROM signup 
 		WHERE user = '%s' 
-		LIMIT 1;", mysql_real_escape_string($user));
+		LIMIT 1;", mysqli_real_escape_string($user));
 		$result = $db->selectdata($query);
 
 		if(mysqli_num_rows($result)==1){
