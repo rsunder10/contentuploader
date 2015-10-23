@@ -5,11 +5,29 @@ require('../php_func/event/rules_isset.php');
 <input type="button" id="<?php if(isset($_SESSION['event_id'])) echo "abort2"; else echo "abort"; ?>" value="Cancel">
 <form id="cordinator" method="post" action="../php_func/event/event_finish.php">
 <hr/>
+<?php
+if(isset($_SESSION['event_id'])){
+for($i=0;$i<count($_SESSION['ecord']);$i++){
+$k=$i+1;
+$rule=$_SESSION['ecord'][$i];	
+printf('<label>Cordinator %d</label><input type="text" name="ecord[]" value="%s" required><br/>',$k,$rule);
+
+}
+
+}
+?>
+
 <div id="cordin">
 <br/>
+<?php
+if($_SESSION['event_id']==NULL){
+?>
 <label>Cordinator 1</label>
 <input type="text" id="enter_cordinator" name="ecord[]" required/>
 <br/>
+<?php 
+} 
+?>
 </div>
 <input type="button" id="add_cordinator" value="+Add"/>
 <hr/>
@@ -23,6 +41,24 @@ require('../php_func/event/rules_isset.php');
 
 
 
+
+<?php 
+if(isset($_SESSION['event_id']))
+{
+?>
+<script>
+var count=<?php echo (count($_SESSION['ecord'])+1);?>;
+</script>
+<?php 
+}
+else{
+?>
+<script>
+var count=2;
+</script>
+<?php 
+}
+?>
 
 
 <script src="../js/new_events.js"></script>

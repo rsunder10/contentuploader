@@ -1,4 +1,5 @@
-var i=2;
+
+
 $(document).ready(function(){
 
 
@@ -12,8 +13,8 @@ $(document).ready(function(){
             case 'abort': window.location.href = "../profile/newevent.php"; break;
             case 'abort2':window.location.href="../profile/user.php";break;
             case 'add_cordinator':
-                    var html='<label>Cordinator '+i+'</label><input type="text" id="enter_cordinator" name="ecord[]" required/> <br/>'
-                    i++;
+                    var html='<label>Cordinator '+count+'</label><input type="text" id="enter_cordinator" name="ecord[]" required/> <br/>'
+                    count++;
                     $('#cordin').append(html);
                 break;
         }
