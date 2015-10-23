@@ -2,7 +2,7 @@
 	$db=new Database();
 	$db->connect();
 
-		$query = sprintf("SELECT * FROM `contentuploader`.`event` WHERE `author_id`=%d ORDER BY `event`.`update_time` DESC LIMIT 5", mysql_real_escape_string($_SESSION['id']));
+		$query = sprintf("SELECT * FROM `contentuploader`.`event` WHERE `author_id`=%d ORDER BY `event`.`update_time` DESC", mysql_real_escape_string($_SESSION['id']));
 		
 		$result = $db->selectdata($query);
 
