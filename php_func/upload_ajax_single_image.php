@@ -14,7 +14,7 @@ if (move_uploaded_file($_FILES['userImage']['tmp_name'], $targetPath))
 $id=$_SESSION['id'];
 
 		$query = sprintf(
-			"UPDATE `contentuploader`.`signup` SET `imgname` = '%s' WHERE `signup`.`id` = %d;",mysql_real_escape_string($newfilename), mysql_real_escape_string($id));
+			"UPDATE `signup` SET `imgname` = '%s' WHERE `signup`.`id` = %d;",mysql_real_escape_string($newfilename), mysql_real_escape_string($id));
 		$result = $db->insertquery($query);
 
 			$_SESSION['proimg']=$newfilename;

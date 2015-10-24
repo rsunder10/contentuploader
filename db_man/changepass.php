@@ -22,7 +22,7 @@ if(isset($_POST['pass1'])&&isset($_POST['pass2'])&&isset($_POST['prev']))
 		SELECT * 
 		FROM signup 
 		WHERE user = '%s' AND password = '%s'
-		 LIMIT 1;", mysql_real_escape_string($_SESSION['user']), mysql_real_escape_string(md5($prev)));
+		 LIMIT 1;", $db->mysqli_escape($_SESSION['user']), $db->mysqli_escape(md5($prev)));
 		$res = $db->selectdata($query1);
 		if(!mysqli_num_rows($res)==1){
 
@@ -33,7 +33,7 @@ if(isset($_POST['pass1'])&&isset($_POST['pass2'])&&isset($_POST['prev']))
 	    if( $vl->valid_password($pass1,$pass2))
 			{
 					
-		$query=sprintf("UPDATE `contentuploader`.`signup` SET  `password`='%s' WHERE id =%d; ",md5($pass1),$_SESSION['id']);
+		$query=sprintf("UPDATE `signup` SET  `password`='%s' WHERE id =%d; ",md5($pass1),$_SESSION['id']);
 				if($result=$db->insertquery($query)){
 						$_SESSION['pass_update']='Password Changed';  
 					

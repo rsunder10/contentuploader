@@ -32,6 +32,9 @@ function connect()
 			return mysqli_query($this->connection,$selectQuery);
 
 		}
+		function mysqli_escape($string){
+			return mysqli_real_escape_string($this->connection,$string);
+		}
 	}
 
 ?>

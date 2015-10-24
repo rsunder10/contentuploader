@@ -6,7 +6,7 @@ if(isset($_SESSION['user'])&&isset($_SESSION['id'])){
  $query = sprintf("
 		SELECT * 
 		FROM signup 
-		WHERE id = %d LIMIT 1;", mysql_real_escape_string($_SESSION['id']));
+		WHERE id = %d LIMIT 1;", $db->mysqli_escape($_SESSION['id']));
 		$result = $db->selectdata($query);
 
 		if(mysqli_num_rows($result)==1){

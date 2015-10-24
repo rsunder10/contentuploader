@@ -19,7 +19,7 @@ if(isset($_POST['regno'])&&isset($_POST['first'])&&isset($_POST['last'])&&isset(
 			if( $vl->valid_register($regno))
 			{
 					
-		$query=sprintf("UPDATE `contentuploader`.`signup` SET  `fname`='%s', `lname`='%s', `regno`='%s', `contact`='%s', `domain`='%s' WHERE id =%d; ",$first,$last,$regno,$contact,$domain,$_SESSION['id']);
+		$query=sprintf("UPDATE `signup` SET  `fname`='%s', `lname`='%s', `regno`='%s', `contact`='%s', `domain`='%s' WHERE id =%d; ",$first,$last,$regno,$contact,$domain,$_SESSION['id']);
 				if($result=$db->insertquery($query)){
 						$_SESSION['update']='UPDATED';  
 					

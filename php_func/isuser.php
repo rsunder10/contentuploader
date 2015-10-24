@@ -14,7 +14,7 @@ if(isset($_POST['user'])&&isset($_POST['pass1'])){
 		SELECT * 
 		FROM signup 
 		WHERE user = '%s' AND password = '%s'
-		 LIMIT 1;", mysqli_real_escape_string($user), mysqli_real_escape_string(md5($pass)));
+		 LIMIT 1;", $db->mysqli_escape($user), $db->mysqli_escape(md5($pass)));
 		$result = $db->selectdata($query);
 
 		if(mysqli_num_rows($result)==1){

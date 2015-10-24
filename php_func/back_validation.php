@@ -27,7 +27,7 @@ if(isset($_POST['regno'])&&isset($_POST['first'])&&isset($_POST['last'])&&isset(
 		SELECT id 
 		FROM signup 
 		WHERE user = '%s' 
-		LIMIT 1;", mysqli_real_escape_string($user));
+		LIMIT 1;", $db->mysqli_escape($user));
 		$result = $db->selectdata($query);
 
 		if(mysqli_num_rows($result)==1){
@@ -43,7 +43,7 @@ if(isset($_POST['regno'])&&isset($_POST['first'])&&isset($_POST['last'])&&isset(
 				$pass1=md5($pass1);
 				
 			
-		$query=sprintf("INSERT INTO `contentuploader`.`signup` (`user`,`password`, `fname`, `lname`, `regno`, `contact`, `email`, `domain`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');",$user,$pass1,$first,$last,$regno,$contact,$email,$domain);
+		$query=sprintf("INSERT INTO `signup` (`user`,`password`, `fname`, `lname`, `regno`, `contact`, `email`, `domain`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');",$user,$pass1,$first,$last,$regno,$contact,$email,$domain);
 				if($result=$db->insertquery($query)){
 						$_SESSION['signup']='signup';
 						header('Location:../register/login.php');    

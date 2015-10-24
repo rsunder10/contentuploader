@@ -20,6 +20,7 @@ require('../includes/include_user.php');
  </p>
  <p>
  	<h3>Rules</h3>
+
  	<?php  
  		for($i=0;$i<$round;$i++){
  			

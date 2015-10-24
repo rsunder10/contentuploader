@@ -42,7 +42,7 @@ for($i=0;$i<$erounds;$i++){
 	}
 }
 if(isset($_SESSION['event_id'])){
-$query=sprintf("UPDATE `contentuploader`.`event` SET `name`='%s', `introduction`='%s', `rules`='%s', `cordinators`='%s', `update_time`='%s', `author_id`=%d, `rounds`=%d, `rules_join`='%s', `round_join`='%s', `cordinator_join`='%s' WHERE `event_id` = %d;",$ename,$intro,$final_encoded,$ecord,$currenttime,$_SESSION['id'],$erounds,$uniq_per_rules,$uniq_round,$cordinator_join,$_SESSION['event_id']);
+$query=sprintf("UPDATE `event` SET `name`='%s', `introduction`='%s', `rules`='%s', `cordinators`='%s', `update_time`='%s', `author_id`=%d, `rounds`=%d, `rules_join`='%s', `round_join`='%s', `cordinator_join`='%s' WHERE `event_id` = %d;",$db->mysqli_escape($ename),$db->mysqli_escape($intro),$db->mysqli_escape($final_encoded),$db->mysqli_escape($ecord),$db->mysqli_escape($currenttime),$db->mysqli_escape($_SESSION['id']),$db->mysqli_escape($erounds),$db->mysqli_escape($uniq_per_rules),$db->mysqli_escape($uniq_round),$db->mysqli_escape($cordinator_join),$db->mysqli_escape($_SESSION['event_id']));
 				if($result=$db->insertquery($query)){
 						$_SESSION['signup']='signup';
 						header('Location:../../profile/user.php');
@@ -59,7 +59,7 @@ $query=sprintf("UPDATE `contentuploader`.`event` SET `name`='%s', `introduction`
 }
 else{
 
-$query=sprintf("INSERT INTO `contentuploader`.`event` (`name`, `introduction`, `rules`, `cordinators`, `create_time`, `update_time`, `author_id`, `event_id`, `rounds`, `rules_join`, `round_join`, `cordinator_join`) VALUES ('%s','%s','%s','%s','%s','%s',%d,NULL,%d,'%s','%s','%s');",$ename,$intro,$final_encoded,$ecord,$currenttime,$currenttime,$_SESSION['id'],$erounds,$uniq_per_rules,$uniq_round,$cordinator_join);
+$query=sprintf("INSERT INTO `event` (`name`, `introduction`, `rules`, `cordinators`, `create_time`, `update_time`, `author_id`, `event_id`, `rounds`, `rules_join`, `round_join`, `cordinator_join`) VALUES ('%s','%s','%s','%s','%s','%s',%d,NULL,%d,'%s','%s','%s');",$db->mysqli_escape($ename),$db->mysqli_escape($intro),$db->mysqli_escape($final_encoded),$db->mysqli_escape($ecord),$db->mysqli_escape($currenttime),$db->mysqli_escape($currenttime),$db->mysqli_escape($_SESSION['id']),$db->mysqli_escape($erounds),$db->mysqli_escape($uniq_per_rules),$db->mysqli_escape($uniq_round),$db->mysqli_escape($cordinator_join));
 				if($result=$db->insertquery($query)){
 						$_SESSION['signup']='signup';
 						header('Location:../../profile/user.php');
