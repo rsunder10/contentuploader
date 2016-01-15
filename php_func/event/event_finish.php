@@ -78,6 +78,10 @@ else{
 
 	die('Some Problem with the Session to create a Events');
 }
+
+
+
+
 $_SESSION['event_id']=NULL;
 $_SESSION['ecord']=NULL;
 $_SESSION['erules']=NULL;

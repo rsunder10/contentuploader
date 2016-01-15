@@ -1,6 +1,10 @@
 <?php
 require('../includes/include_user.php');
 ?>
+<form method ="post" action="../php_func/jsonencode.php">
+  <input type ="submit" value = "JsonCreate">
+</form>
+
 <form method="post" action="../register/logout.php">
 	<input type="submit" value="Logout" >
 </form>
