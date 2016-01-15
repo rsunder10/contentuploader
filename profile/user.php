@@ -29,8 +29,8 @@ require('../includes/include_user.php');
     <th>CreatedAt</th>
     <th>UpdatedAt</th>
     <th>View</th>		
+    <th>JsonView</th>
     <th>Edit</th>
-
   </tr>
   <?php
 			require('profunc/recently_added_event.php');
@@ -44,6 +44,7 @@ require('../includes/include_user.php');
     <td><?php echo get_time_difference_php($row['create_time']) ; ?></td>
     <td><?php echo get_time_difference_php($row['update_time']) ; ?></td>
     <td><a href="viewaction.php?<?php echo "eventid=".$row['event_id']  ?> ">View</a></td>		
+    <td><a href="viewaction_asjson.php?<?php echo "eventid=".$row['event_id']  ?> ">View as Json</a></td>    
     <td><a href="editaction.php?<?php echo "eventid=".$row['event_id']  ?> ">Edit</a></td>
   </tr>
   	<?php
