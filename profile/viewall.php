@@ -15,25 +15,29 @@ require('../includes/include_user.php');
   <tr>
     <th>Title</td>
     <th>CreatedAt</th>
-    <th>UpdatedAt</th>
-    <th>View</th>		
+    <th>UpdatedAt</th>	
     <th>View as Json</th>   
     <th>Edit</th>
 
   </tr>
   <?php
-			require('profunc/alleventsbyuser.php');
+			// require('profunc/alleventsbyuser.php');
+  $jsonDecode=json_decode(file_get_contents("../jsonelement/empdata.json"),true);
+
 			require('profunc/timeconvert.php');
+    $len =count($jsonDecode);
 			if($len>=1){
-			while($row=mysqli_fetch_assoc($result)){
+      foreach($jsonDecode as $row)
+{
+
+  
 	?>
 
   <tr>
     <td><?php echo $row['name'] ;?></td>
     <td><?php echo get_time_difference_php($row['create_time']) ; ?></td>
-    <td><?php echo get_time_difference_php($row['update_time']) ; ?></td>
-    <td><a href="viewaction.php?<?php echo "eventid=".$row['event_id']  ?> ">View</a></td>		
-    <td><a href="viewaction_asjson.php?<?php echo "eventid=".$row['event_id']  ?> ">View_asJson</a></td>  
+    <td><?php echo get_time_difference_php($row['update_time']) ; ?></td>	
+    <td><a href="viewaction_asjson.php?<?php echo "eventid=".$row['event_id']  ?> ">View</a></td>  
     <td><a href="editaction.php?<?php echo "eventid=".$row['event_id']  ?> ">Edit</a></td>
   </tr>
   	<?php

@@ -1,9 +1,7 @@
 <?php
 require('../includes/include_user.php');
 ?>
-<form method ="post" action="../php_func/jsonencode.php">
-  <input type ="submit" value = "JsonCreate">
-</form>
+
 
 <form method="post" action="../register/logout.php">
 	<input type="submit" value="Logout" >
@@ -29,25 +27,32 @@ require('../includes/include_user.php');
     <th>CreatedAt</th>
     <th>UpdatedAt</th>
     <th>View</th>		
-    <th>JsonView</th>
     <th>Edit</th>
   </tr>
   <?php
 			require('profunc/recently_added_event.php');
 			require('profunc/timeconvert.php');
+$jsonDecode=json_decode(file_get_contents("../jsonelement/empdata.json"),true);
+
+$len =count($jsonDecode);
+$counters = 1;
 			if($len>=1){
-			while($row=mysqli_fetch_assoc($result)){
+			foreach($jsonDecode as $row)
+{
+
+  if($counters>5)
+      break;
 	?>
 
   <tr>
     <td><?php echo $row['name'] ;?></td>
     <td><?php echo get_time_difference_php($row['create_time']) ; ?></td>
     <td><?php echo get_time_difference_php($row['update_time']) ; ?></td>
-    <td><a href="viewaction.php?<?php echo "eventid=".$row['event_id']  ?> ">View</a></td>		
-    <td><a href="viewaction_asjson.php?<?php echo "eventid=".$row['event_id']  ?> ">View as Json</a></td>    
-    <td><a href="editaction.php?<?php echo "eventid=".$row['event_id']  ?> ">Edit</a></td>
+    <td><a href="viewaction_asjson.php?<?php echo "eventid=".$row['event_id']  ?> ">View</a></td>    
+    <td><a href="editaction.php?<?php echo "eventid=".$row['event_id'] ?> ">Edit</a></td>
   </tr>
   	<?php
+    $counters++;
 				}
 		
 			}

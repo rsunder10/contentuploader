@@ -6,7 +6,7 @@ require('../includes/include_user.php');
 <hr/>
 <div>
 <?php require('../includes/navlinks.php'); ?>
-<?php require('profunc/selectivesearch.php');?>
+<?php require('profunc/jsonselective.php');?>
 <?php require('profunc/decryptruleandcord.php'); ?>
 </div>
 
