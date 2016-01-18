@@ -13,6 +13,13 @@ require('../includes/include_newevent.php');
 <?php if(isset($_SESSION['erounds'])) echo 'value="'.$_SESSION['erounds'].'" ';?>
 required/>
 </br>
+
+<label>Common Rules:</label>
+<textarea placeholder="Enter The Rule" name="rule_rule" id="rule_rule" 
+<?php if(isset($_SESSION['rule_rule'])) ;?>
+required><?php echo $_SESSION['rule_rule'] ?></textarea>
+</br>
+
 <input type="submit" id="submit_name_round" value="Next Step">
 </form>
 <hr/>

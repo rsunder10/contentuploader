@@ -3,7 +3,8 @@
 $(document).ready(function(){
 
 
-    $("input[type='button']").click(function() {
+$("input[type='button']").click(function() {
+
         switch(this.id) {
             case 'create_event':window.location.href = "../event/event_name.php"; break;
             case 'event_name': window.location.href="../event/event_name.php";break;
@@ -13,10 +14,12 @@ $(document).ready(function(){
             case 'abort': window.location.href = "../profile/newevent.php"; break;
             case 'abort2':window.location.href="../profile/user.php";break;
             case 'add_cordinator':
-                    var html='<label>Cordinator '+count+'</label><input type="text" id="enter_cordinator" name="ecord[]" required/> <br/>'
+                    var html='<label>Cordinator '+count+'</label><input type="text" id="enter_cordinator" name="ecord[]" required/><label>Mobile Number</label><input type="text" id = "mobile_number" name = "number[]" required/><br/><hr/>'
                     count++;
                     $('#cordin').append(html);
                 break;
-        }
+}
+
     });
+
 })

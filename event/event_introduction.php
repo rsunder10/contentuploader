@@ -6,6 +6,7 @@ require('../php_func/event/name_isset.php');
 <input type="button" id="<?php if(isset($_SESSION['event_id'])) echo "abort2"; else echo "abort"; ?>" value="Cancel">
 <form id="intro" action="event_rules.php" method="post">
 <hr/>
+<label>Introduction</label>
 <textarea id="enter_introduction" name="eintroduction" placeholder="Write About Your Events"
  required><?php if(isset($_SESSION['eintroduction'])) echo $_SESSION['eintroduction'];?></textarea>
 </br>
