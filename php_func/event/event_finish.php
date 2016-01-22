@@ -13,30 +13,50 @@ $final_encoded='';
 $datetime= new DateTime();
 $datetime->setTimeZone(new DateTimeZone("Asia/Calcutta"));
 $currenttime=$datetime->format('Y-m-d H:i:s');
-if(isset($_POST['ecord'])){
+if(isset($_POST['ecord'])&&isset($_POST['number'])){
 	$_SESSION['ecord']=$_POST['ecord'];
+	$_SESSION['number']=$_POST['number']
 	
 }
 
-if(isset($_SESSION['ecord'])&& isset($_SESSION['erules'])&&isset($_SESSION['erounds'])&&isset($_SESSION['ename'])&&isset($_SESSION['eintroduction']))
+if(isset($_SESSION['ecord'])&& isset($_SESSION['erules'])&&isset($_SESSION['erounds'])&&isset($_SESSION['ename'])&&isset($_SESSION['eintroduction'])&&isset($_SESSION['rule_rule']))
 {
 
 $ename=$vl->test_input($_SESSION['ename']);
 $erounds=$vl->test_input($_SESSION['erounds']);
 $intro=$vl->test_input($_SESSION['eintroduction']);
+$rule=$vl->test_input($_SESSION['rule_rule']);
+
+
+//for cordinators
 $ecord=array(); 
-foreach ($_SESSION['ecord'] as $arr) {
-   array_push($ecord, $vl->test_input($arr));
+
+
+foreach ($_SESSION['ecord'] as $arr and $_SESSION['number'] as $vrr) {
+   $num=array();
+   array_push($num, $vl->test_input($arr));
+   array_push($num,$vl->test_input($vrr));
+   array_push($ecord,$num);
 }
-$ecord=implode($cordinator_join,$ecord);
+
+
+
+
+
 for($i=0;$i<$erounds;$i++){
 	$erules=$vl->test_input($_SESSION['erules'][$i]);
-	$str = explode(PHP_EOL, $erules);
+	// $str = explode(PHP_EOL, $erules);
 	
-	$rule_per_rule=implode($uniq_per_rules,$str);
-	if($i<$erounds-1){
-	$final_encoded=$final_encoded.$rule_per_rule.$uniq_round;
+	// $rule_per_rule=implode($uniq_per_rules,$str);
+	
+	// if($i<$erounds-1){
+	// $final_encoded=$final_encoded.$rule_per_rule.$uniq_round;
+	
+
+
 	}
+
+
 	else{
 		$final_encoded=$final_encoded.$rule_per_rule;
 	}
