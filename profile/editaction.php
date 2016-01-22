@@ -7,7 +7,8 @@ require('../includes/include_user.php');
 <div>
 <?php require('../includes/navlinks.php'); ?>
 <?php require('profunc/jsonselective.php');?>
-<?php require('profunc/decryptruleandcord.php'); ?>
+<?php require('profunc/decryptruleandcord.php');?>
+
 </div>
 
 <h1>Editing the Event</h1>

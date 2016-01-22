@@ -6,16 +6,18 @@ $db=new Database();
 $db->connect();
 
 
-$uniq_round=uniqid();
-$uniq_per_rules=uniqid();
-$cordinator_join=uniqid();
-$final_encoded='';
+// $uniq_round=uniqid();
+// $uniq_per_rules=uniqid();
+// $cordinator_join=uniqid();
+
+// $final_encoded='';
+
 $datetime= new DateTime();
 $datetime->setTimeZone(new DateTimeZone("Asia/Calcutta"));
 $currenttime=$datetime->format('Y-m-d H:i:s');
 if(isset($_POST['ecord'])&&isset($_POST['number'])){
 	$_SESSION['ecord']=$_POST['ecord'];
-	$_SESSION['number']=$_POST['number']
+	$_SESSION['number']=$_POST['number'];
 	
 }
 
@@ -25,42 +27,45 @@ if(isset($_SESSION['ecord'])&& isset($_SESSION['erules'])&&isset($_SESSION['erou
 $ename=$vl->test_input($_SESSION['ename']);
 $erounds=$vl->test_input($_SESSION['erounds']);
 $intro=$vl->test_input($_SESSION['eintroduction']);
+
+
 $rule=$vl->test_input($_SESSION['rule_rule']);
 
+$rules=array();
+
+$str = explode(PHP_EOL,$rule);
+
+foreach($str as $val){
+array_push($rules,$vl->test_input($val));
+}
 
 //for cordinators
 $ecord=array(); 
 
 
-foreach ($_SESSION['ecord'] as $arr and $_SESSION['number'] as $vrr) {
+foreach ($_SESSION['ecord'] as $index =>$arr) {
    $num=array();
    array_push($num, $vl->test_input($arr));
-   array_push($num,$vl->test_input($vrr));
+   array_push($num,$vl->test_input($_SESSION['number'][$index]));
    array_push($ecord,$num);
 }
 
 
 
-
+$desc_round=array();
 
 for($i=0;$i<$erounds;$i++){
 	$erules=$vl->test_input($_SESSION['erules'][$i]);
-	// $str = explode(PHP_EOL, $erules);
-	
-	// $rule_per_rule=implode($uniq_per_rules,$str);
-	
-	// if($i<$erounds-1){
-	// $final_encoded=$final_encoded.$rule_per_rule.$uniq_round;
-	
-
-
-	}
-
-
-	else{
-		$final_encoded=$final_encoded.$rule_per_rule;
-	}
+	array_push($desc_round,$erules);
 }
+
+
+	// else{
+	// 	$final_encoded=$final_encoded.$rule_per_rule;
+	// }
+
+}
+
 if(isset($_SESSION['event_id'])){
 $jsonDecode=json_decode(file_get_contents("../../jsonelement/empdata.json"),true);
 $result=array();
@@ -69,14 +74,13 @@ $eventid=(int)$_SESSION['event_id']-1;
 
 $jsonDecode[$eventid]['name']=(string)$ename;
 $jsonDecode[$eventid]['introduction']=(string)$intro;
-$jsonDecode[$eventid]['rules']=(string)$final_encoded;
-$jsonDecode[$eventid]['cordinators']=(string)$ecord;
+$jsonDecode[$eventid]['rules']=$rules;
+$jsonDecode[$eventid]['desc']=$desc_round;
+$jsonDecode[$eventid]['cordinators']=$ecord;
 $jsonDecode[$eventid]['update_time']=(string)$currenttime;
 $jsonDecode[$eventid]['author_id']=(string)$_SESSION['id'];
 $jsonDecode[$eventid]['rounds']=(string)$erounds;
-$jsonDecode[$eventid]['rules_join']=(string)$uniq_per_rules;
-$jsonDecode[$eventid]['round_join']=(string)$uniq_round;
-$jsonDecode[$eventid]['cordinator_join']=(string)$cordinator_join;
+
 
 
 
@@ -122,16 +126,14 @@ $contentsDecoded = json_decode($contents, true);
 $custom=array(
 'name' => (string)$ename,
 'introduction' =>(string) $intro,
-'rules' =>(string) $final_encoded,
-'cordinators' => (string)$ecord,
+'rules' =>$rules,
+'cordinators' =>$ecord,
+'desc'=>$desc_round,
 'create_time' => (string)$currenttime,
 'update_time' => (string)$currenttime,
 'author_id' => (string)$_SESSION['id'] ,
 'event_id' => (string)$eventid ,
 'rounds' => (string)$erounds ,
-'rules_join' => (string)$uniq_per_rules, 
-'round_join' => (string)$uniq_round,
-'cordinator_join' => (string)$cordinator_join,
 
 );
 
@@ -157,11 +159,8 @@ header('Location:../../profile/user.php');
 		
 }	
 
-}
-else{
 
-	die('Some Problem with the Session to create a Events');
-}
+
 
 
 
@@ -172,4 +171,7 @@ $_SESSION['erules']=NULL;
 $_SESSION['erounds']=NULL;
 $_SESSION['ename']=NULL;
 $_SESSION['eintroduction']=NULL;
+$_SESSION['rule_rule']=NULL;
+$_SESSION['number']=NULL;
+
 ?>

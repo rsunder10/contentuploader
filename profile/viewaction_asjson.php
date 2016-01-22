@@ -18,25 +18,35 @@ require('../includes/include_user.php');
  	<?php echo $row['introduction'] ?>
 
  </p>
+<p>
+	<h3>Common Rule</h3>
+<p>
+
+<?php echo nl2br($_SESSION['rule_rule']);
+
+
+
+	?></p>
+
+
+
+</p>
+
  <p>
- 	<h3>Rules</h3>
+ 	<h3>DESC_ROUNDWISE</h3>
 
  	<?php  
  		for($i=0;$i<$round;$i++){
  			
 ?>
 		<h4>Round <?php echo" ".$i+1?> </h4>
-		<?php 
-		for($j=0;$j<$number_rules;$j++){
-		?>
+
 		<p>
-			<?php echo $rules_per_round[$i][$j]; ?>
+			<?php echo nl2br($_SESSION['erules'][$i]); ?>
 		</p>
 
 
-<?php 
-
- 			}
+<?php 			
  		}
  ?>
 
@@ -44,11 +54,11 @@ require('../includes/include_user.php');
 
  <h3>Cordinators</h3>
 <?php
-for($j=0;$j<count($cordinator_array);$j++){	
+for($j=0;$j<count($_SESSION['ecord']);$j++){	
 ?>
 
 <p>
-<?php echo $j+1; echo " "; echo $cordinator_array[$j];	?>
+<?php echo $j+1; echo " "; echo $_SESSION['ecord'][$j]; echo " || Mobile Number : "; echo $_SESSION['number'][$j]	?>
 </p>
 
 <?php

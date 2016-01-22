@@ -15,9 +15,8 @@ required/>
 </br>
 
 <label>Common Rules:</label>
-<textarea placeholder="Enter The Rule" name="rule_rule" id="rule_rule" 
-<?php if(isset($_SESSION['rule_rule'])) ;?>
-required><?php echo $_SESSION['rule_rule'] ?></textarea>
+<textarea placeholder="Enter The Rule" name="rule_rule" id="rule_rule" required>
+<?php if(isset($_SESSION['rule_rule'])) echo $_SESSION['rule_rule'];?></textarea>
 </br>
 
 <input type="submit" id="submit_name_round" value="Next Step">

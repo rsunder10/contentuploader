@@ -7,11 +7,13 @@ require('../php_func/event/rules_isset.php');
 <hr/>
 <?php
 if(isset($_SESSION['event_id'])){
+
 for($i=0;$i<count($_SESSION['ecord']);$i++){
 $k=$i+1;
+
 $rule=$_SESSION['ecord'][$i];	
 $number = $_SESSION['number'][$i];
-printf('<label>Cordinator %d</label><input type="text" name="ecord[]" value="%s" required><br/><input type="text" id = "mobile_number" name = "number[]" required/>',$k,$rule,$number);
+printf('<label>Cordinator %d</label><input type="text" name="ecord[]" value="%s" required><label>Mobile:</label><input type="text" id = "mobile_number" value="%d" name = "number[]" required/><br/><hr/>',$k,$rule,$number);
 
 }
 
