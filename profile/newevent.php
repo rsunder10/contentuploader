@@ -20,5 +20,6 @@ $_SESSION['erules']=NULL;
 $_SESSION['erounds']=NULL;
 $_SESSION['ename']=NULL;
 $_SESSION['eintroduction']=NULL;
+$_SESSION['rule_rule']=NULL;
 	require('../layout/footer.php');
 ?>

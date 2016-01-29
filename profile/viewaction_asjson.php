@@ -11,6 +11,7 @@ require('../includes/include_user.php');
 <?php require('profunc/timeconvert.php');?>
 <?php require('profunc/decryptruleandcord.php');?>
 <h1><?php echo $row['name']; ?></h1>
+<h3><?php echo $row['domain']; ?></h3>
 <small><?php echo "created at:". get_time_difference_php($row['create_time']) ; ?></small>
 <small><?php echo "updated at".get_time_difference_php($row['update_time']) ; ?></small>
  <p>
@@ -22,11 +23,21 @@ require('../includes/include_user.php');
 	<h3>Common Rule</h3>
 <p>
 
-<?php echo nl2br($_SESSION['rule_rule']);
+<?php 
+
+	for ($i=0;$i<count($rules);$i++){
 
 
 
-	?></p>
+	?>
+
+	<h3>Rule<?php echo" ".$i+1?>:</h3>
+	<?php echo $rules[$i];?>
+
+<?php
+}
+?>
+	</p>
 
 
 

@@ -29,13 +29,12 @@ $erounds=$vl->test_input($_SESSION['erounds']);
 $intro=$vl->test_input($_SESSION['eintroduction']);
 
 
-$rule=$vl->test_input($_SESSION['rule_rule']);
-
 $rules=array();
 
-$str = explode(PHP_EOL,$rule);
 
-foreach($str as $val){
+$domain_name=$_SESSION['domain'];
+
+foreach($_SESSION['rule_rule'] as $val){
 array_push($rules,$vl->test_input($val));
 }
 
@@ -71,7 +70,7 @@ $jsonDecode=json_decode(file_get_contents("../../jsonelement/empdata.json"),true
 $result=array();
 
 $eventid=(int)$_SESSION['event_id']-1;
-
+$jsonDecode[$eventid]['domain']=(string)$domain_name;
 $jsonDecode[$eventid]['name']=(string)$ename;
 $jsonDecode[$eventid]['introduction']=(string)$intro;
 $jsonDecode[$eventid]['rules']=$rules;
@@ -124,6 +123,7 @@ $contentsDecoded = json_decode($contents, true);
 
 //Modify the counter variable.
 $custom=array(
+'domain'=>(string)$domain_name,
 'name' => (string)$ename,
 'introduction' =>(string) $intro,
 'rules' =>$rules,
@@ -137,8 +137,8 @@ $custom=array(
 
 );
 
-
 $contentsDecoded[]=$custom;
+
  
 
 //Encode the array back into a JSON string.

@@ -2,10 +2,15 @@
 
 $(document).ready(function(){
 
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+});
 
 $("input[type='button']").click(function() {
 
         switch(this.id) {
+            // case 'domain':window.location.href="../event/domain_select.php";break;
+
             case 'create_event':window.location.href = "../event/event_name.php"; break;
             case 'event_name': window.location.href="../event/event_name.php";break;
             case 'event_rules': window.location.href = "../event/event_rules.php"; break;
@@ -18,8 +23,16 @@ $("input[type='button']").click(function() {
                     count++;
                     $('#cordin').append(html);
                 break;
+
+            case 'add_rule':
+                    var html='<label>Rule'+count+'</label><input type="text" id="rule_rule" name="rule_rule[]" required/><br/><hr/>'
+                    count++;
+                    $('#ruleadd').append(html);
+                break;                
 }
 
     });
+
+
 
 })

@@ -11,6 +11,7 @@ require('../includes/include_user.php');
 <?php require('profunc/timeconvert.php');?>
 <?php require('profunc/decryptruleandcord.php');?>
 <h1><?php echo $row['name']; ?></h1>
+<h3><?php echo $row['domain']?></h3>
 <small><?php echo "created at:". get_time_difference_php($row['create_time']) ; ?></small>
 <small><?php echo "updated at".get_time_difference_php($row['update_time']) ; ?></small>
  <p>

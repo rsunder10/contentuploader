@@ -27,18 +27,16 @@ $_SESSION['ename']=$row['name'];
 $_SESSION['erounds']=$row['rounds'];
 $_SESSION['event_id']=$row['event_id'];
 $_SESSION['eintroduction']=$row['introduction'];
+$_SESSION['domain']=$row['domain'];
 
 
 // $_SESSION['rule_rule']
-$str='';
+
 for($i=0;$i<sizeof($rules);$i++){
-	$str.=$rules[$i];
-	if($i!=sizeof($rules)-1){
-		$str.=PHP_EOL;
-	}
+
+$_SESSION['rule_rule'][$i]=$rules[$i];
 }
 
-$_SESSION['rule_rule']=$str;
 
 
 

@@ -38,7 +38,7 @@ $("#status").html('<img src="./img/loader.gif" align="absmiddle">&nbsp;Checking 
 }
 else
 	{
-	$("#status").html('<font color="red">The username should have at least <strong>4</strong> characters.</font>');
+	$("#status").html('<font color="red">The username should have at least <strong>8</strong> characters.</font>');
 	user=false;
 	}
 
