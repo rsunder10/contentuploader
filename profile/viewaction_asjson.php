@@ -2,10 +2,11 @@
 require('../includes/include_user.php');
 ?>
 <form method="post" action="../register/logout.php">
-<input type="submit" value="Logout" >
+<input class="btn btn-info pull-right" type="submit" value="Logout" ><br>
 <hr/>
 <div>
 <?php require('../includes/navlinks.php'); ?>
+<hr>
 </div>
 <?php require('profunc/jsonselective.php'); ?>
 <?php require('profunc/timeconvert.php');?>
@@ -14,13 +15,14 @@ require('../includes/include_user.php');
 <h3><?php echo $row['domain']; ?></h3>
 <small><?php echo "created at:". get_time_difference_php($row['create_time']) ; ?></small>
 <small><?php echo "updated at".get_time_difference_php($row['update_time']) ; ?></small>
+<div class="container">
  <p>
- 	<h3>Introduction</h3>
+ 	<h2>Introduction</h2><hr>
  	<?php echo $row['introduction'] ?>
 
  </p>
 <p>
-	<h3>Common Rule</h3>
+	<h2>Common Rule</h2><hr>
 <p>
 
 <?php 
@@ -31,7 +33,7 @@ require('../includes/include_user.php');
 
 	?>
 
-	<h3>Rule<?php echo" ".$i+1?>:</h3>
+	<h2>Rule<?php echo" ".$i+1?>:</h2><hr>
 	<?php echo $rules[$i];?>
 
 <?php
@@ -44,13 +46,13 @@ require('../includes/include_user.php');
 </p>
 
  <p>
- 	<h3>DESC_ROUNDWISE</h3>
+ 	<h2>DESC_ROUNDWISE</h2><hr>
 
  	<?php  
  		for($i=0;$i<$round;$i++){
  			
 ?>
-		<h4>Round <?php echo" ".$i+1?> </h4>
+		<h2>Round <?php echo" ".$i+1?> </h2></hr>
 
 		<p>
 			<?php echo nl2br($_SESSION['erules'][$i]); ?>
@@ -63,7 +65,7 @@ require('../includes/include_user.php');
 
  </p>
 
- <h3>Cordinators</h3>
+ <h2>Cordinators</h2><hr>
 <?php
 for($j=0;$j<count($_SESSION['ecord']);$j++){	
 ?>
@@ -76,7 +78,8 @@ for($j=0;$j<count($_SESSION['ecord']);$j++){
 	}
 ?>
 
-
+</div>
+<br>
 <?php
 	require('../layout/footer.php');
 ?>

@@ -16,14 +16,23 @@ require('../layout/header.php');
 <h2>Please Sign In</h2>
 	<p>If Not a member? <a href='../index.php'>SignUp</a> Here</p>
 	<hr>
-
-<div>
-	<input id="username" type="text" name="user" placeholder="username">
+<div class="row">
+<div class="col-lg-1">
+Username:
+</div>
+<div class="col-lg-8">
+	<input class="form-control" id="username" type="text" name="user" placeholder="username">
+</div>
 </div>
 <br/>
 
-<div>
-	<input id="password1" type="password" name="pass1" placeholder="password">
+<div class="row">
+<div class="col-lg-1">
+Password:
+</div>
+<div class="col-lg-8">
+	<input class="form-control" id="password1" type="password" name="pass1" placeholder="password">
+</div>
 </div>
 <br/>
 <div id="warning">

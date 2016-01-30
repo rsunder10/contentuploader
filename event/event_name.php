@@ -4,16 +4,21 @@ require('../includes/include_newevent.php');
 
 
 
-<input type="button" id="<?php if(isset($_SESSION['event_id'])) echo "abort2"; else echo "abort"; ?>" value="Cancel">
+<input class="btn btn-info pull-right" type="button" id="<?php if(isset($_SESSION['event_id'])) echo "abort2"; else echo "abort"; ?>" value="Cancel">
 <hr/>
 
-
+<div class="container">
 
 <form id="name_rounds" action="event_introduction.php" method="POST">
 
 
 <label>Select Domain</label>
-<select id="mySelect" name="domain">
+<div class="row">
+<div class="col-lg-10">
+<select class="form-control" id="mySelect" name="domain">
+</div>
+<br>
+</div>
 <?php
 $domain = file_get_contents('../jsonelement/domain.json');
 $domain_arr = json_decode($domain,true);
@@ -35,7 +40,7 @@ foreach ($domain_arr as $key => $value)
 ?>
 </select>
 
-
+<br>
 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
 Add Domain
 </button>
@@ -66,11 +71,11 @@ Add Domain
 <!-- modal info is herer -->
 
 <label>Event Name:</label>
-<input type="text" placeholder="Enter Event Name" id="enter_name" name="ename"
+<input class="form-control" type="text" placeholder="Enter Event Name" id="enter_name" name="ename"
 <?php if(isset($_SESSION['ename'])) echo 'value="'.$_SESSION['ename'].'" ';?> required/>
 <br/>
 <label>Number Of Rounds:</label>
-<input type="number" placeholder="Enter Number Of Rounds" name="erounds" id="enter_rounds" 
+<input class="form-control" type="number" placeholder="Enter Number Of Rounds" name="erounds" id="enter_rounds" 
 <?php if(isset($_SESSION['erounds'])) echo 'value="'.$_SESSION['erounds'].'" ';?>
 required/>
 </br>
@@ -108,7 +113,7 @@ if($_SESSION['event_id']==NULL){
 
 <label>Rule <?php echo $i ?></label>
 
-<input type="text" id="rule_rule" name="rule_rule[]" value="<?php echo $_SESSION['rule_rule'][$i] ?>" required/>  
+<input class="form-control" type="text" id="rule_rule" name="rule_rule[]" value="<?php echo $_SESSION['rule_rule'][$i] ?>" required/>  
 <br/>
 <hr/>
 <?php } ?>
@@ -132,13 +137,14 @@ if(sizeof($_SESSION['rule_rule'])==0){ ?>
 </div>
 
 
-<input type="button" id="add_rule" value="+AddRule"/>
+<input class="btn btn-primary btn-sm" type="button" id="add_rule" value="+AddRule"/>
 <hr/>
 
  <br/>
-<input type="submit" id="submit_name_round" value="Next Step">
+<input class="btn btn-primary btn-sm" type="submit" id="submit_name_round" value="Next Step">
 </form>
 <hr/>
+</div>
 <!--      <?php
      if($text!=NULL){
      $domain_arr[$text]=$text;

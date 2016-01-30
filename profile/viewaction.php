@@ -2,10 +2,11 @@
 require('../includes/include_user.php');
 ?>
 <form method="post" action="../register/logout.php">
-<input type="submit" value="Logout" >
+<input class="btn btn-info pull-right" type="submit" value="Logout" ><br>
 <hr/>
 <div>
 <?php require('../includes/navlinks.php'); ?>
+<hr>
 </div>
 <?php require('profunc/selectivesearch.php'); ?>
 <?php require('profunc/timeconvert.php');?>
@@ -13,19 +14,21 @@ require('../includes/include_user.php');
 <h1><?php echo $row['name']; ?></h1>
 <small><?php echo "created at:". get_time_difference_php($row['create_time']) ; ?></small>
 <small><?php echo "updated at".get_time_difference_php($row['update_time']) ; ?></small>
+
+<div class="container">
  <p>
- 	<h3>Introduction</h3>
+ 	<h2>Introduction</h2><hr>
  	<?php echo $row['introduction'] ?>
 
  </p>
  <p>
- 	<h3>Rules</h3>
+ 	<h2>Rules</h2><hr>
 
  	<?php  
  		for($i=0;$i<$round;$i++){
  			
 ?>
-		<h4>Round <?php echo" ".$i+1?> </h4>
+		<h2>Round <?php echo" ".$i+1?> </h2><hr>
 		<?php 
 		for($j=0;$j<$number_rules;$j++){
 		?>
@@ -42,7 +45,7 @@ require('../includes/include_user.php');
 
  </p>
 
- <h3>Cordinators</h3>
+ <h2>Cordinators</h2><hr>
 <?php
 for($j=0;$j<count($cordinator_array);$j++){	
 ?>
@@ -55,7 +58,8 @@ for($j=0;$j<count($cordinator_array);$j++){
 	}
 ?>
 
-
+</div>
+<br>
 <?php
 	require('../layout/footer.php');
 ?>
