@@ -15,7 +15,7 @@ $k=$i+1;
 
 $rule=$_SESSION['ecord'][$i];	
 $number = $_SESSION['number'][$i];
-printf('<label>Cordinator %d</label><input type="text" name="ecord[]" value="%s" required><label>Mobile:</label><input type="text" id = "mobile_number" value="%d" name = "number[]" required/><br/><hr/>',$k,$rule,$number);
+printf('<label>Cordinator %d</label><input type="text" name="ecord[]" value="%s" class="form-control" required><label>Mobile:</label><input type="text" id = "mobile_number" class="form-control" value="%d" name = "number[]" required/><br/><hr/>',$k,$rule,$number);
 
 }
 

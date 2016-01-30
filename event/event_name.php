@@ -96,7 +96,7 @@ $k=$i+1;
 
 $rule=$_SESSION['rule_rule'][$i];	
 
-printf('<label>Rule %d</label><input type="text" id="rule_rule" name="rule_rule[]" value="%s"  required/><br/><hr/>  ',$k,$rule);
+printf('<label>Rule %d</label><input type="text" id="rule_rule" name="rule_rule[]" class="form-control" value="%s"  required/><br/><hr/>  ',$k,$rule);
 
 }
 
@@ -113,7 +113,7 @@ if($_SESSION['event_id']==NULL){
 
 <label>Rule <?php echo $i ?></label>
 
-<input class="form-control" type="text" id="rule_rule" name="rule_rule[]" value="<?php echo $_SESSION['rule_rule'][$i] ?>" required/>  
+<input  type="text" id="rule_rule" name="rule_rule[]" class="form-control" value="<?php echo $_SESSION['rule_rule'][$i] ?>" required/>  
 <br/>
 <hr/>
 <?php } ?>
@@ -125,7 +125,7 @@ if($_SESSION['event_id']==NULL){
 if(sizeof($_SESSION['rule_rule'])==0){ ?>
 <label>Rule 1</label>
 
-<input type="text" id="rule_rule" name="rule_rule[]"  required/>
+<input type="text" id="rule_rule"  class="form-control" name="rule_rule[]"  required/>
 <br/>
 <hr/>
 <?php

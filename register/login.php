@@ -48,7 +48,7 @@ Password:
 <div>
 
 
-<input type="submit" value="SignIn" id ="submit">
+<input type="submit" value="SignIn" id ="submit" class="btn btn-primary">
 
 
 </form>

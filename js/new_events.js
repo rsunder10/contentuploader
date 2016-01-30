@@ -19,13 +19,13 @@ $("input[type='button']").click(function() {
             case 'abort': window.location.href = "../profile/newevent.php"; break;
             case 'abort2':window.location.href="../profile/user.php";break;
             case 'add_cordinator':
-                    var html='<label>Cordinator '+count+'</label><input type="text" id="enter_cordinator" name="ecord[]" required/><label>Mobile Number</label><input type="text" id = "mobile_number" name = "number[]" required/><br/><hr/>'
+                    var html='<label>Cordinator '+count+'</label><input type="text" id="enter_cordinator" class="form-control" name="ecord[]" required/><label>Mobile Number</label><input type="text" id = "mobile_number" class="form-control" name = "number[]" required/><br/><hr/>'
                     count++;
                     $('#cordin').append(html);
                 break;
 
             case 'add_rule':
-                    var html='<label>Rule'+count+'</label><input type="text" id="rule_rule" name="rule_rule[]" required/><br/><hr/>'
+                    var html='<label>Rule'+count+'</label><input type="text" id="rule_rule" class="form-control" name="rule_rule[]" required/><br/><hr/>'
                     count++;
                     $('#ruleadd').append(html);
                 break;                
